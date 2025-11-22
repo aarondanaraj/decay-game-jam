@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcdahmn8ocfco"]
+
+[ext_resource type="Script" uid="uid://c2ljkfu4bm1cg" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://bxpfu573xurrc" path="res://Buttons/bg.png" id="2_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://jg75crqvysak" path="res://Buttons/Frame 11.png" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://f5es5oodbb7e" path="res://Buttons/Decay Logo.png" id="3_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://dh5nebffq4ikw" path="res://Buttons/Frame 12.png" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://n62k2ebgyho1" path="res://Buttons/Options Normal.png" id="6_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://b4vegm8ci4awl" path="res://Buttons/Options Hover.png" id="7_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://bda88p3ag6ul8" path="res://Buttons/Exit Normal.png" id="8_iotk1"]
+[ext_resource type="Texture2D" uid="uid://bsytn6adk4vll" path="res://Buttons/Exit Hover.png" id="9_w44g7"]
+[ext_resource type="PackedScene" uid="uid://riiadghhhb5f" path="res://fade_transition.tscn" id="10_0o4t1"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(575.5, 326)
+scale = Vector2(1.39251, 1.18613)
+texture = ExtResource("2_dy7ct")
+
+[node name="DecayLogo" type="Sprite2D" parent="."]
+position = Vector2(591, 147)
+scale = Vector2(0.297607, 0.297607)
+texture = ExtResource("3_0o4t1")
+
+[node name="Button Manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Start Game" type="TextureButton" parent="Button Manager"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 288.0
+offset_right = 743.0
+offset_bottom = 388.0
+texture_normal = ExtResource("2_fu7sn")
+texture_hover = ExtResource("3_jix8l")
+
+[node name="Options" type="TextureButton" parent="Button Manager"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 390.0
+offset_right = 743.0
+offset_bottom = 490.0
+texture_normal = ExtResource("6_0k4wn")
+texture_hover = ExtResource("7_j5v2v")
+
+[node name="Exit" type="TextureButton" parent="Button Manager"]
+layout_mode = 1
+offset_left = 443.0
+offset_top = 489.0
+offset_right = 743.0
+offset_bottom = 589.0
+texture_normal = ExtResource("8_iotk1")
+texture_hover = ExtResource("9_w44g7")
+
+[node name="Fade_transition" parent="." instance=ExtResource("10_0o4t1")]
+visible = false
+
+[node name="Fade_timer" type="Timer" parent="Fade_transition"]
+
+[connection signal="pressed" from="Button Manager/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button Manager/Exit" to="." method="_on_exit_pressed"]

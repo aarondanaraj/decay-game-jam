@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpufjjw770cgd"]
+[gd_scene load_steps=5 format=3 uid="uid://dpufjjw770cgd"]
 
 [ext_resource type="Script" uid="uid://b684di7cvmjry" path="res://scripts/player.gd" id="1_3vyb7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_3vyb7"]
+albedo_color = Color(0.825342, 0.000133033, 7.29662e-05, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_g2els"]
+material = SubResource("ORMMaterial3D_3vyb7")
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.215576, -0.0180907, -0.254356)
@@ -18,3 +24,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02411, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0232671, 0.0431706, -0.0115072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.65675, 0, 0, 0, 2.20151, 0, 0, 0, 2.65675, 0, 2.68815, 0)
+layers = 2
+mesh = SubResource("TubeTrailMesh_g2els")
