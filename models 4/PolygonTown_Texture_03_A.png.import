@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl0awpftmwaw5"
-path.s3tc="res://.godot/imported/gravel_spec.jpg-959d091fad4bd17091e75620709ae087.s3tc.ctex"
+uid="uid://cxo5hcowihqre"
+path.s3tc="res://.godot/imported/PolygonTown_Texture_03_A.png-2916ff899bf8ed82da152c4e755c1e5b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models 3/GLB format/Textures/gravel_spec.jpg"
-dest_files=["res://.godot/imported/gravel_spec.jpg-959d091fad4bd17091e75620709ae087.s3tc.ctex"]
+source_file="res://models 4/PolygonTown_Texture_03_A.png"
+dest_files=["res://.godot/imported/PolygonTown_Texture_03_A.png-2916ff899bf8ed82da152c4e755c1e5b.s3tc.ctex"]
 
 [params]
 
